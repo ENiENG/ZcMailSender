@@ -106,7 +106,7 @@ public class ZcMailSender {
 	        msg.setRecipient(RecipientType.BCC, new InternetAddress(to));  
 	        msg.setSubject(subject);  
 	        msg.setSentDate(new Date());  
-	        msg.setText(content);	 
+	        msg.setContent(content, "text/html;charset=utf-8");	 
 	        msg.saveChanges();  	 
 	        Transport.send(msg); 
         }catch(Exception e){
