@@ -1,5 +1,5 @@
 # ZcMailSender
-An easy to use E-mail sender, built on top of javamail
+An easy-to-use java e-mail sender, built on top of javamail.
 
 # Usage
 
