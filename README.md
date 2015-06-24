@@ -1,6 +1,6 @@
 # ZcMailSender
 An easy-to-use java e-mail sender, built on top of javamail.
-
+<br>Require javamail library: https://java.net/downloads/javamail/javax.mail.jar
 # Usage
 
 <pre><code>
