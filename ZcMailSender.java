@@ -83,11 +83,11 @@ public class ZcMailSender {
     	return this;
     }
  
-    public boolean send(String subject,String content,String to){
-    	return send(subject,content,to,false);
+    public boolean send(String subject,String content,String toEmailAddress){
+    	return send(subject,content,toEmailAddress,false);
     }
     
-    public boolean send(String subject,String content,String to,boolean debug){  
+    public boolean send(String subject,String content,String toEmailAddress,boolean debug){  
         Properties props = new Properties();  
         props.setProperty("mail.transport.protocol", protocol);
         props.setProperty("mail.smtp.auth", auth==null ? "false" : "true");  
@@ -103,7 +103,7 @@ public class ZcMailSender {
         try{
 	        MimeMessage msg = new MimeMessage(session);  
 	        msg.setFrom(new InternetAddress(from));  
-	        msg.setRecipient(RecipientType.BCC, new InternetAddress(to));  
+	        msg.setRecipient(RecipientType.BCC, new InternetAddress(toEmailAddress));  
 	        msg.setSubject(subject);  
 	        msg.setSentDate(new Date());  
 	        msg.setContent(content, "text/html;charset=utf-8");
