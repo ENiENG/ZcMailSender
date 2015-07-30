@@ -133,9 +133,24 @@ public class ZcMailSender {
     
     // test
     public static void main(String[] args) throws Exception {  
-		ZcMailSender.getInstance("smtp_server_address")
-					.setAuth("email_address", "password")
-					.enableSSLwith("sslPort_number")
-					.send("test subject", "test content", "target email address",true);
+	java.util.Scanner in = new java.util.Scanner(System.in);
+    	System.out.println("Your smtp server:");
+    	String smtp_sev = in.nextLine();
+    	System.out.println("Send a mail from[E-mail address]:");
+    	String from_addr = in.nextLine();
+    	System.out.println("Password:");
+    	String password = in.nextLine();
+    	System.out.println("Mail subject:");
+    	String subject = in.nextLine();
+    	System.out.println("Mail body:");
+    	String body = in.nextLine();
+    	System.out.println("Send to[E-mail address]:");
+    	String to_addr = in.nextLine();
+    	in.close();
+
+	ZcMailSender.getInstance(smtp_sev)
+		.setAuth(from_addr,password)
+		.enableSSLwith(null)
+		.send(subject,body,to_addr, true);
     }  
 }
